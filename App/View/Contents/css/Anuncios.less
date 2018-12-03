@@ -1,0 +1,53 @@
+.box-shadow(@args : ' ')
+{
+    -webkit-box-shadow: @args;
+    box-shadow: @args;
+}
+
+.fSacle(@escala : 1.1)
+{
+    -webkit-transform: scale(@escala);
+    -ms-transform: scale(@escala);
+    transform: scale(@escala);
+}
+
+.fTransition(@tempo-transition: 0.8s)
+{
+    -webkit-transition: all @tempo-transition ease-in-out;
+    -moz-transition: all @tempo-transition ease-in-out;
+    -o-transition: all @tempo-transition ease-in-out;
+    transition: all @tempo-transition ease-in-out;
+}
+
+
+.body-anuncios{
+    //color: red;
+    height: 300px;
+    left: 15px;
+    right: 15px;
+   // background-color: red;
+    margin: 25px;
+    //background-image: url("../../Contents/img/anuncios.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+   // background-attachment: fixed; 
+    border: 1px solid #959191;
+    border-radius: 5px;
+    .box-shadow(0 15px 16px 0 rgba(44, 71, 146, 0.25));
+    .fTransition();
+    
+    &:hover {
+        .fSacle();
+        .fTransition();
+    }
+}
+
+.position-anuncios-texto{
+    text-align: center;
+    padding-top: 100px;
+    z-index: 500px;
+   // background-image: "../../Contents/img/anuncios.png";
+    background-attachment: fixed;
+}

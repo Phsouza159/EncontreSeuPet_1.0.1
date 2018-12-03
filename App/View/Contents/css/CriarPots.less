@@ -1,0 +1,38 @@
+@import 'MyFunctions';
+
+.opcaoes-pet{
+   
+  
+    
+    & .card {
+       
+       margin: 50px;
+       height: 350px;
+       width: 350px;
+
+      // background-color: rgba(255,255,255,1);
+       //border: 3px solid #17a2b8;
+       .fTransition();
+       
+     } 
+     &  .card:hover {
+          //background-color: #17a2b8;
+           color: white;
+           .fTransition();
+     }
+}
+
+.opcao-doacao{
+       background-image: url('../img/doacao.gif');
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+      
+}
+
+.opcao-perdido{
+       background-image: url('../img/perdido.gif');
+       background-size: 200% 200%;
+       background-repeat: no-repeat;
+       background-position-x: -125px;
+       background-position-y: -150px;
+}

@@ -1,0 +1,365 @@
+@import "MyFunctions.less";        
+
+
+.simular-img{
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+}
+
+/* == == == == */
+
+@footer-cor-fundo            : #F7F9FC;
+@footer-altura               : 400px;
+@footer-fonte-cor-padrao     : #5d6494;
+@footer-fonte-tamanho-padrao : 20px;
+
+// ------------ icon card (imagem do card)
+@iconCard-alinhamento-topo      : 85px;
+@iconCard-alinhamento-esquerda  : 85px;
+
+
+// ------------ box elementos 
+@box-altura                  : 220px;
+@box-largura                 : @box-altura;
+
+//- Possicao do texto de descricao 
+  @box-top                             : @iconCard-alinhamento-topo - 10px; 
+  @box-fonte-descricao-tamanho         : 13px;
+  @box-fonte-descricao-color           : #5d6494;
+  @box-fonte-descricao-espacamento     : 15px;
+//--//
+
+// ------------ card Circulo
+@circulo-box-tamanho        : 80px;
+@circulo-box-border         : 1px solid rgba(225, 227, 232, 0.18);
+@circulo-box-bgColor        : #fff;
+@circulo-box-shadow         : 0 3px 4px 0 rgba(44, 71, 146, 0.25);
+@circulo-raio               : 100%;
+
+
+// ------------- Efeito espansao BOX
+
+@superBox-altura             : 220px;
+@superBox-largura            : @superBox-altura;
+
+@superBox-deslocamento-icon             : 6;
+@superBox-escala-icon                   : -32px;
+@superBox-deslocamento-icon-foooter     : 1.4;
+@superBox-escala-icon-foooter           : -48px;
+
+// ------------- Efeito transicao do texto
+
+@text-position                          : relative;
+@text-top                               : 30px;
+@text-largura-alinhamneto               : 240px;
+
+// com .8 ele volta para tras , sem o ponto , para a frente
+@text-escala                            : .8; 
+@text-deslocamento                      : -4px;
+
+
+/* == == == ==*/
+  // Funcoes 
+.alinhamentoFooter()
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.transitionEfectBox( @tempo: 1s)
+{
+    -webkit-transition: -webkit-box-shadow ease @tempo;
+    transition: -webkit-box-shadow ease @tempo;
+    transition: box-shadow ease @tempo;
+    transition: box-shadow ease @tempo, 
+        -webkit-box-shadow ease @tempo;
+}
+
+.transitionEfect( @tempo: 0.6s){
+    -webkit-transition: all @tempo ease;
+    transition: all @tempo ease;
+    -webkit-transition-delay: @tempo / 2;
+    transition-delay: @tempo / 2;
+    -will-change: transform;
+}
+
+.box-shadow(@args : ' ')
+{
+    -webkit-box-shadow: @args;
+    box-shadow: @args;
+}
+.box-transform(@escla: ' ' , @deslocamento: ' ') 
+{
+    -webkit-transform: translateY(@deslocamento) scale(@escla);
+     transform: translateY(@deslocamento) scale(@escla);
+}
+
+
+.AddTextContent(@text:' ')
+{
+    content: @text ;
+}
+
+.coluna()
+{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    margin-right:-15px;
+    margin-left:-15px
+}
+
+// == == == == == //
+
+
+// ______________________________________________________________
+
+
+.footer-body {
+
+    min-height: @footer-altura;
+    height: auto;
+    background-color: @footer-cor-fundo;
+    font-family: system, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: @footer-fonte-tamanho-padrao;
+    color: @footer-fonte-cor-padrao;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.position-cards
+{ 
+    /*
+     * controle de media de resolucao: alinhamento responsivo.... auto nao funcionou...  
+     * acima de 500px de largura // cards em lista linear
+     * abaixo de 500px cardem lista na forma colunas 
+     * funcao .coluna igual ao (.row bootstrap) para deixar em linhas os cards 
+     */
+   @media only screen and (min-width: 1024px) {  // resolucao-largura > 1024
+     margin-left:  25vh;
+     & section{
+         .coluna()
+     }
+   }
+   @media only screen and (min-width: 800px ) and ( max-width: 1024px ) // resolucao-largura entre  800 e 1024
+   {
+     margin-left: 100px;    
+     & section{
+         .coluna()
+     }
+   }
+   @media only screen and (min-width: 501px ) and ( max-width: 799px ) // resolucao-largura entre 501 e 799
+   {
+     margin-left: 0px;    
+     & section{
+         .coluna()
+     }
+   }
+   @media only screen and (max-device-width: 500px) // resolucao-largura ate 500
+   {
+      margin-left: 50px;
+   }
+   
+}
+
+
+.box-card {
+    position: absolute;
+    width: @box-largura;
+    height: @box-altura;
+    border-radius: 3px;
+    overflow: hidden; // nao deixar o circulo passsar da div tamanho! efeito do retangulo
+    .transitionEfectBox();
+    .alinhamentoFooter();
+    
+    &::after {
+        position: absolute;
+        opacity: 0;
+        top: @box-top;
+        font-size: @box-fonte-descricao-tamanho;
+        color: @box-fonte-descricao-color;
+        padding: @box-fonte-descricao-espacamento;
+        .transitionEfect(0.3s);
+        
+        //.AddTextContent(" add content "); // OFF
+    }
+}
+/*
+ * efeito de transicao
+ */
+.icon-card{
+    position: relative;
+    padding-top: @iconCard-alinhamento-topo;
+    padding-left: @iconCard-alinhamento-esquerda;
+    .transitionEfect();
+}
+/* 
+ * efeito de expansao do card
+ */
+.icon_bg {
+
+    width: @circulo-box-tamanho;
+    height: @circulo-box-tamanho;
+    border-radius: @circulo-raio;
+    border: @circulo-box-border;
+    background-color: @circulo-box-bgColor;
+
+    .box-shadow(@circulo-box-shadow);
+    .transitionEfect();
+    .alinhamentoFooter();
+}
+
+.title {
+    position: relative;
+}
+
+/*
+ * efeito de expansao com hover
+ */
+.super-box {
+    width: @superBox-largura;
+    height: @superBox-altura;
+    // .alinhamentoFooter();
+ 
+    &:hover .box-card {
+        .box-shadow(@circulo-box-shadow);
+        .transitionEfect();
+        z-index: 100;
+    }
+
+    &:hover .icon_bg {
+        .box-transform( @superBox-deslocamento-icon 
+                      , @superBox-escala-icon);
+                      
+    }
+    
+    &:hover .icon-card {
+        padding-top:  55px;
+        padding-left: 65px;
+        .box-transform( @superBox-deslocamento-icon-foooter 
+                      , @superBox-escala-icon-foooter);
+        z-index: 100;
+    }
+    // efeito esconder titulo
+    &:hover .text {
+        opacity: 0;
+        .box-transform( @text-escala
+                      , @text-deslocamento );
+         z-index: 100;
+    }
+    // efeito do texto 
+    &:hover .box-card::after {
+      opacity: 1;
+      .transitionEfect();
+    }
+}
+/*
+ * Efeito de transicao para o texto
+ */
+.text {
+
+    position: @text-position;
+    top: @text-top;
+    width: @text-largura-alinhamneto;
+    text-align: center;
+ 
+   .transitionEfect(0.4s);
+}
+
+
+
+#carouselFooter{
+    @media only screen and( min-width: 600px)
+    {
+        width: 90%;
+    }
+    @media only screen and( max-width: 600px)
+    {
+        width: 100%;
+    }
+    
+    min-height: 300px; 
+   // width: 90%;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.box-nav-carousel-next , .box-nav-carousel-prev 
+{
+    position: absolute;
+    top: 100px;
+    //bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+   // width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    
+    
+    width:  80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: gray;
+        .transitionEfect();    
+    .box-shadow(@circulo-box-shadow);
+    
+    &:hover {
+        opacity: 1;
+        background-color: slategrey;
+        @media only screen and(min-width: 800px)
+        {
+          .box-transform(1.5, 4px);
+            
+        }
+        .transitionEfect();  
+    }
+}
+.box-nav-carousel-next
+{
+    right: 0px;
+}
+.box-nav-carousel-prev
+{
+    left: 0px;
+}
+
+.footer-body-nav
+{
+    min-height: 500px;
+}
+
+.element-card{
+     padding: 15px;
+     border-radius: 3px;
+    .transitionEfect();
+ 
+    &:hover {
+        background-color: #fff;
+    
+        .box-shadow();
+        .transitionEfect();
+        .box-shadow(@circulo-box-shadow);
+        
+    }
+}

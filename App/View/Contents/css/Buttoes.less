@@ -1,0 +1,308 @@
+/*
+  REFERENCIA PROJETO CODE PEN :: https://codepen.io/flowuhh/pen/mjpGvj
+*/
+
+
+.div-buttoes button {
+  padding: 12px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-color: #3f51b5;
+  background-color: #3f51b5;
+  color: #fff;
+  cursor: pointer;
+  border-style: solid;
+  transition: 0.25s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+.div-buttoes button span {
+  position: relative;
+  z-index: 1;
+}
+
+.a1:hover, .a2, .c2, .d2, .e2, .f3, .f4 {
+  color: #3f51b5;
+  background-color: transparent;
+}
+
+.b1:hover, .b2, .b3 {
+  color: #3f51b5;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.c1, .c2, .d1, .d2, .e1, .e2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.c1:after, .c2:after, .d1:after, .d2:after, .e1:after, .e2:after {
+  background-color: #3f51b5;
+  width: 100%;
+  height: 120px;
+  content: "";
+  position: absolute;
+  transition: 0.25s ease;
+}
+
+//h1 {
+//  margin-top: 0;
+//  margin-bottom: 60px;
+//  font-size: 36px;
+//}
+//h1 span {
+//  color: #3f51b5;
+//}
+
+.div-buttoes div {
+  margin-bottom: 36px;
+}
+.div-buttoes .desc {
+  margin-left: 24px;
+}
+
+.a2:hover {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.b2:hover {
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+  color: #fff;
+}
+
+.b3:hover {
+  border-color: #3f51b5;
+}
+
+.c1 {
+  background-color: transparent;
+}
+.c1:hover {
+  color: #3f51b5;
+}
+.c1:after {
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  border-radius: 50%;
+  top: -100%;
+  left: 50%;
+}
+.c1:hover:after {
+  top: 100%;
+}
+
+.c2:hover {
+  color: #fff;
+}
+.c2:after {
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  border-radius: 50%;
+  top: 100%;
+  left: 50%;
+}
+.c2:hover:after {
+  top: -100%;
+}
+
+.d1 {
+  background-color: transparent;
+}
+.d1:hover {
+  color: #3f51b5;
+}
+.d1:after {
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: -100%;
+  left: 50%;
+}
+.d1:hover:after {
+  top: 100%;
+}
+
+.d2:hover {
+  color: #fff !important;
+}
+.d2:after {
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  top: 100%;
+  left: 50%;
+}
+.d2:hover:after {
+  top: 0;
+}
+
+.e1 {
+  background-color: transparent;
+}
+.e1:hover {
+  color: #3f51b5;
+}
+.e1:after {
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  width: 240px;
+  top: -100%;
+  left: 100%;
+}
+.e1:hover:after {
+  left: 220%;
+}
+
+.e2:hover {
+  color: #fff;
+}
+.e2:after {
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 240px;
+  top: -100%;
+  left: 220%;
+}
+.e2:hover:after {
+  left: 0;
+}
+
+.f1:hover {
+  border-radius: 12px;
+}
+
+.f2 {
+  border-radius: 12px;
+}
+.f2:hover {
+  border-radius: 0;
+}
+
+.f3:hover {
+  border-style: dashed;
+}
+
+.f4:hover {
+  border-style: dotted;
+}
+
+.g1:hover {
+  opacity: 0.5;
+}
+
+.g2:hover {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.g3:hover {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.g4 span {
+  transition: 0.25s ease;
+}
+.g4:hover span {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+//.h1:hover {
+//  background-color: #ff4081;
+//  border-color: #ff4081;
+//}
+/*
+.h2:hover {
+  border-color: #ff4081;
+}
+
+.h3:hover {
+  color: #ff4081;
+}
+*/
+.i1:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.i2 {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+}
+.i2:hover {
+  box-shadow: none;
+}
+
+.i3:hover {
+  -webkit-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  transform: translateY(-6px);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.j1:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.j2:hover {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.k1:hover {
+  -webkit-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  transform: translateY(-6px);
+}
+
+.k2:hover {
+  -webkit-transform: translateX(-6px);
+  -ms-transform: translateX(-6px);
+  transform: translateX(-6px);
+}
+
+.l1:hover {
+  -webkit-transform: rotate(-6deg);
+  -ms-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+}
+
+.l2:hover {
+  -webkit-transform: scale(1.1) rotate(-6deg);
+  -ms-transform: scale(1.1) rotate(-6deg);
+  transform: scale(1.1) rotate(-6deg);
+}
+
+.l3:hover {
+  -webkit-transform: scale(0.9) rotate(-6deg);
+  -ms-transform: scale(0.9) rotate(-6deg);
+  transform: scale(0.9) rotate(-6deg);
+}
+
+.m1:hover {
+  -webkit-transform: skewX(-6deg);
+  -ms-transform: skewX(-6deg);
+  transform: skewX(-6deg);
+}
+
+.m2:hover {
+  -webkit-transform: skewY(-6deg);
+  -ms-transform: skewY(-6deg);
+  transform: skewY(-6deg);
+}
+
+.n1:hover {
+  -webkit-transform: rotateZ(-12deg) skewX(12deg);
+  -ms-transform: rotateZ(-12deg) skewX(12deg);
+  transform: rotateZ(-12deg) skewX(12deg);
+  box-shadow: -3px 3px 6px 0 rgba(0, 0, 0, 0.5);
+}

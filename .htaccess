@@ -1,0 +1,44 @@
+# ************************************************** #
+#   Arquivo de configuracao apache .htaccess         #
+# ************************************************** #
+
+#redirect /main.php
+
+# definir index paradrao
+# DirectoryIndex /main.php
+
+# forcar acesso www na url
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^(atlas)(:80)? [NC]
+#RewriteRule ^(.*) http://www.atlas.com [R=301,L]
+#order deny,allow
+
+# bloquear listagem de diretorio
+#SOptions -Indexes
+
+
+## bloquear arquivos no acesso pela url
+<files *.ini>
+    order allow,deny
+    deny from all
+</files>
+
+# controle de erro
+    # bloqueio de acesso a arquivos
+ErrorDocument 403 /EncontreSeuPet/App/View/Site/ErroDocument.php
+    # arquivos nao encontrado no diretorio
+ErrorDocument 404 /EncontreSeuPet/App/View/Site/ErroDocument.php
+    # desconhecido 500
+ErrorDocument 500 /EncontreSeuPet/App/View/Site/ErroDocument.php
+
+ErrorDocument 302 /EncontreSeuPet/App/View/Site/ErroDocument.php
+
+#compactar arquivos
+<IfModule mod_deflate.c>
+    <FilesMatch "\.(js|css|jpg|png|gif|ico|php|html|htm)$">
+        <IfModule mod_filter.c>
+            SetOutputFilter DEFLATE
+            AddOutputFilterByType DEFLATE text/css text/javascript application/x-javascript text/html text/plain text/xml image/x-icon
+        </IfModule>
+    </FilesMatch>
+</IfModule>

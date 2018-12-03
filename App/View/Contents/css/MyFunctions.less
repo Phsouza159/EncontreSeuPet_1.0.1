@@ -1,0 +1,51 @@
+
+/* 
+    Created on : 06/10/2018, 00:26:30
+    Author     : FAMILY 
+*/
+
+//cria quadrado
+.fAlturaVSlargura(@altura: 0px , @largura: 0px , @color : rgba(0,0,0,0))
+{
+    height: @altura;
+    width: @largura;
+    background-color: @color;
+}
+
+//imagem no fundo, total
+.fImagemFundo-total(@url: 'default')
+{
+    background-image: url(@url);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+}
+
+//sombra bloco/quadrado
+.fShadow-box(@var1 : 7px , @var2: 7px , @var3 : 7px , @color: gray )
+{
+    box-shadow: @var1 @var2 @var3 @color;
+}
+
+//tranissão / tempo de determinada  
+.fTransition(@tempo-transition: 0.8s)
+{
+    -webkit-transition: all @tempo-transition ease-in-out;
+    -moz-transition: all @tempo-transition ease-in-out;
+    -o-transition: all @tempo-transition ease-in-out;
+    transition: all @tempo-transition ease-in-out;
+}
+
+//borda/ margem do quadrado menor
+.fBorder(@largura: 0px , @color: black)
+{
+    border: @largura solid @color;
+}
+
+//formatação do texto
+.fText-format( @size : 18px , @color : white)
+{
+    font-size: @size;
+    color: @color;
+    //   font-family: sans-serif
+}

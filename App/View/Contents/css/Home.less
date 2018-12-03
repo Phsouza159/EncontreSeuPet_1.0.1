@@ -1,0 +1,166 @@
+/* 
+    Created on : 05/10/2018, 23:23:25
+    Author     : 
+*/
+//funcao less
+@import "MyFunctions.less";
+
+body{
+    margin: 0px;
+    // background-color: #000; 
+}
+
+.element-text-home
+{
+    .fText-format();
+}
+
+@altura-imagens-divs: 80vh - 120px;
+@largura-imagens-divs: auto;
+
+//funcao auxiliar 
+.fundo(@url: 'default')
+{
+    background-image: url(@url);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.div-01{
+    .fAlturaVSlargura(@altura-imagens-divs , @largura-imagens-divs);
+    //.fImagemFundo-total("../img/bk-01.jpg");
+    .fundo("../img/bk-01.jpg");
+}
+
+.div-02{
+    .fAlturaVSlargura(@altura-imagens-divs , @largura-imagens-divs);
+    //.fImagemFundo-total("../img/bk-02.jpg");
+    .fundo("../img/bk-02.jpg"); 
+}
+
+.div-03{
+    .fAlturaVSlargura(@altura-imagens-divs , @largura-imagens-divs);
+    //.fImagemFundo-total("../img/bk-03.jpg");
+    .fundo("../img/bk-03.jpg");
+}
+
+.div-04{
+    .fAlturaVSlargura(@altura-imagens-divs , @largura-imagens-divs);
+    //.fImagemFundo-total("../img/bk-04.jpg");
+    .fundo("../img/bk-04.jpg");
+}
+
+/* config img fundo -> pegar tds as divs */
+.div-01 ,.div-02  ,.div-03  ,.div-04 
+{
+    // background-repeat: no-repeat;
+    // background-attachment: fixed ;
+} 
+.cabecalho-header{
+
+    position:absolute;
+    margin-top: 20px;
+    margin-left: 70vh;
+    z-index: 100;
+    color:white;
+}
+/*
+footer{
+    padding: 0px;
+    margin: 0px;
+    background-color: gray;
+    width: 100%;
+    height: 250px;
+    color: white;
+}
+*/
+h1 , h2 , h3 , h4 , h5 , h6 {
+
+    font-family: 'Asap', sans-serif;
+    color:white;
+
+    //pq não tá indo?
+}
+
+/* mascara de cor -- background */
+.mask{
+    /*
+    background-color: rgba( 0 , 0 , 0 , 0.6);
+    margin-top: 0px;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    */
+}
+/**/
+.conteiner-corpo // chamando função less
+{
+    .fText-format();
+}
+
+
+/* Corpo -- dentro do Slide */
+.conteiner-corpo
+{
+    /* config as margem do conteudo para ficar legalzinho*/
+    // efeito mascara -- off - 
+    background-color: rgba( 0 , 0 , 0 , 0.3);
+    padding: 10% 15%;
+    width: 100%;
+    height: 100%;
+    z-index: 100;  
+
+}
+
+.text {
+    text-align: justify;
+    text-indent: 5%;
+}
+
+.menu-pags 
+{ 
+    list-style-type: none; 
+    padding-top: 50px;
+    position: fixed;
+}
+.menu-pags ul { border-radius: 10px 0 0 0;}
+.menu-pags li {
+    display: inline;
+    padding: 15px ;
+    margin: -2px ;
+    background-color: red;
+
+}
+
+.menu-pags li:hover
+{
+    background: #fff;
+    color: black;
+}
+
+
+.btn-acao-links{
+    background-color: rgba( 0 , 0 , 0 ,0);
+    color: white;
+    width: 150px;
+    height: 80px;
+    .fTransition(0.3s);
+
+    & button
+    {
+
+
+    }   
+
+    &:hover{
+        background-color:#45a049;
+        .fTransition(0.3s);
+    }
+} 
+
+.menu-pags a {text-decoration: none;}
+.menu-pags a:link ,
+a:visited ,
+a:active { color: #fff ;}
+

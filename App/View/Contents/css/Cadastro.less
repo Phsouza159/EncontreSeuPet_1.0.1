@@ -1,0 +1,167 @@
+/* 
+    Created on : 06/10/2018, 00:25:43
+    Author     : FAMILY
+*/
+@import "MyFunctions.less";
+@import "TelaCadastro.less"; // arquivo less para telas de cadastro(Formulario)
+body{
+    .fImagemFundo-total("../img/dog-bk.png");
+}
+
+.conteiner-center
+{
+    margin-left: 85vh;
+    margin-top: 50px;
+}
+
+.cadastro-etapa-01// , .cadastro-etapa-02
+{
+    .fShadow-box(0px , 0px , 0px);
+    .fAlturaVSlargura(500px , 500px , #fff);
+    .fBorder(3px , #00BFFF);
+    .fTransition();
+
+    &:hover{
+        .fShadow-box(14px , 14px , 14px);
+        .fTransition();
+    }
+}
+//
+.controle-etapas
+{
+    //background-color: #17A2B8;
+    min-height: 110px;
+    min-width: 100%;
+}
+
+.etapas-cards
+{
+    border: 1px solid gray;
+    background-color: solid gray;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 3px solid #17a2b8;
+    border-radius: 100%;
+    .fTransition();  
+
+    &:hover {
+       // background-color: #fff;
+       // color: black;
+    }
+
+}
+
+.etapas-cards-active {
+    background-color: #17a2b8;
+    .fTransition();  
+    & i{
+        color: white !important;
+        .fTransition();  
+    }
+    
+
+}
+
+.etapas-cards-sucesso {
+    background-color: #28a745;
+    .fTransition();  
+    
+    & i{
+        color: white !important;
+        .fTransition();  
+    }
+    
+    & , .etapas-cards{
+        border: 3px solid #28a745 !important;
+    }
+}
+
+.etapas-linha
+{
+    background-color: #17a2b8;
+    width: 170px;
+    height: 3px;
+    margin-top: 55px;
+    .fTransition();  
+}
+
+.etapas-icon
+{
+
+    width: 65px;
+    height: 55px;
+    margin-top: 20px;
+    margin-left: 13px;
+    text-align: center;
+    .fTransition();  
+    
+}
+
+.etapas-descricao{
+    .etapas-icon;
+
+    & label{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .fTransition();  
+}
+
+
+
+.requerid-custom 
+{
+    position: absolute;
+    border-left: 25px solid gray;
+    text-align: center;
+    background-color: gray;
+    height: 35px;
+    width: 220px;
+    margin-left: -270px;
+    margin-top: 60px;
+    z-index: 100;
+
+    &::before {
+        content: "Campo obrigatório!";
+    }
+}
+
+.requerid-custom-telefone
+{
+    .requerid-custom;
+    &::before {
+        content: "Telefone inválido";
+    }
+}
+
+.requerid-custom-data
+{
+    .requerid-custom;
+    margin-left: -176px;
+    margin-top: 35px; 
+}
+
+
+.fa-user {
+    color: white !important;
+    font-size: 50px !important;
+    background: rgba( 0 ,0 ,0 ,0);
+    .fTransition();
+}
+
+.fa-key {
+    color: #17a2b8 !important;
+    font-size: 50px !important;
+    background: rgba( 0 ,0 ,0 ,0);
+    .fTransition();
+    
+}
+
+.fa-paw{
+    color: #17a2b8 !important;
+    font-size: 50px !important;
+    background: rgba( 0 ,0 ,0 ,0);
+    .fTransition();
+}
